@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <title>My Contacts</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">
+            My Contacts
+        </h1>
+
+            <input class="form-control mb-3 mt-3" type="text" id="filter-input" placeholder="Search names...">
+
+        <ul id="names" class="list-group">
+
+            <li class="list-group-header list-unstyled">
+                <h5>A</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Abe</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Abel</a>
+            </li><li class="list-group-item">
+                <a href="#">Adam</a>
+            </li><li class="list-group-item">
+                <a href="#">Allan</a>
+            </li><li class="list-group-item">
+                <a href="#">Anna</a>
+            </li><li class="list-group-item">
+                <a href="#">Amanda</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Aaron</a>
+            </li><li class="list-group-item">
+                <a href="#">Achford</a>
+            </li>
+
+            <li class="list-group-header list-unstyled">
+                <h5>B</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Beth</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Bill</a>
+            </li><li class="list-group-item">
+                <a href="#">Bob</a>
+            </li><li class="list-group-item">
+                <a href="#">Brad</a>
+            </li><li class="list-group-item">
+                <a href="#">Brian</a>
+            </li><li class="list-group-item">
+                <a href="#">Beccie</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Ben</a>
+            </li><li class="list-group-item">
+                <a href="#">Bliss</a>
+            </li>
+
+            <li class="list-group-header list-unstyled">
+                <h5>C</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Cathy</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Carrie</a>
+            </li><li class="list-group-item">
+                <a href="#">Courtney</a>
+            </li><li class="list-group-item">
+                <a href="#">Clara</a>
+            </li><li class="list-group-item">
+                <a href="#">Calvin</a>
+            </li><li class="list-group-item">
+                <a href="#">Cecie</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Chris</a>
+            </li><li class="list-group-item">
+                <a href="#">Craig</a>
+            </li>
+
+            <li class="list-group-header list-unstyled">
+                <h5>D</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Abe</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Dale</a>
+            </li><li class="list-group-item">
+                <a href="#">Dion</a>
+            </li><li class="list-group-item">
+                <a href="#">Denzel</a>
+            </li><li class="list-group-item">
+                <a href="#">Dorothy</a>
+            </li><li class="list-group-item">
+                <a href="#">Dalio</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Desmond</a>
+            </li><li class="list-group-item">
+                <a href="#">Dereck</a>
+            </li>
+
+            <li class="list-group-header list-unstyled">
+                <h5>E</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Edwin</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Erick</a>
+            </li><li class="list-group-item">
+                <a href="#">Erlich</a>
+            </li><li class="list-group-item">
+                <a href="#">Elsie</a>
+            </li><li class="list-group-item">
+                <a href="#">Earl</a>
+            </li><li class="list-group-item">
+                <a href="#">Edith</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Ben</a>
+            </li><li class="list-group-item">
+                <a href="#">Bliss</a>
+            </li>
+
+            <li class="list-group-header list-unstyled">
+                <h5>F</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Frank</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Federich</a>
+            </li><li class="list-group-item">
+                <a href="#">Falon</a>
+            </li><li class="list-group-item">
+                <a href="#">Franchesca</a>
+            </li><li class="list-group-item">
+                <a href="#">Fillip</a>
+            </li><li class="list-group-item">
+                <a href="#">Faith</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Fringie</a>
+            </li><li class="list-group-item">
+                <a href="#">Firling</a>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+    <script>
+        //Get Input element
+        let filterInput = document.getElementById('filter-input');
+
+        //Add Event Listiner
+        filterInput.addEventListener('keyup', filterNames);
+
+        function filterNames() {
+            //Get value of the input
+            let filterValue = document.getElementById('filter-input').value.toUpperCase();
+            
+            //Get names ul
+            let ul = document.getElementById('names');
+            // Get items
+            let li = document.querySelectorAll('li.list-group-item');
+            
+            //Loop through list-group-item lis
+            for(let i = 0; i < li.length; i++) {
+                let a = li[i].getElementsByTagName('a')[0];
+
+                //If matched
+                if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+
+                    li[i].style.display = '';
+
+                } else {
+
+                    li[i].style.display = 'none';
+
+                }
+        }
+        }
+    </script>
+    
+</body>
+</html>
